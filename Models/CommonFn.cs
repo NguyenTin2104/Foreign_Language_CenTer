@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
+
 namespace QuanLyTTNN.Models
 {
     public class CommonFn

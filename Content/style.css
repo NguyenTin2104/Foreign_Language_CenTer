@@ -101,7 +101,7 @@ body {
 
         .sidebar_inner .siderbar_menu > li.active > a,
         .sidebar_inner .siderbar_menu > li > a:hover {
-            background: #3d3d79;
+            background: #FF6699;
             color: #fff;
             text-decoration: none !important;
         }
@@ -129,7 +129,7 @@ body {
 
     .sidebar .logout_btn a:hover {
         background: #fff;
-        color: #3d3d79;
+        color: #FF6699;
         text-decoration: none;
     }
 
@@ -206,12 +206,12 @@ body {
     }
 
     .accordion li a.active {
-        color: #fff;
+        color: #fff;        
         text-decoration: none;
     }
 
     .accordion li a:hover {
-        background: #3d3d79;
+        background: #FF6699;
         color: #fff;
     }
 
