@@ -73,7 +73,7 @@ namespace QuanLyTTNN.Admin
         {
             GridView1.EditIndex = -1;
             GetClass();
-        }
+        }    
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
