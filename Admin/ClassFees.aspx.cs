@@ -110,9 +110,10 @@ namespace QuanLyTTNN.Admin
                 GridViewRow row = GridView1.Rows[e.RowIndex];
                 int feesId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
                 string feeAmt = (row.FindControl("TextBox1") as TextBox).Text;
-                fn.Query("Update Fees SET FeesAmount = '" + feeAmt.Trim() + "' WHERE FeesId = " + feesId + "' ");
+                fn.Query("UPDATE Fees SET FeesAmount = '" + feeAmt.Trim() + "' WHERE FeesId = '" + feesId + "' ");
                 lblMsg.Text = "Fees Updated Succesfully!";
                 lblMsg.CssClass = "alert alert-success";
+                GridView1.EditIndex = -1;
                 GetFees();
             }
             catch (Exception ex)

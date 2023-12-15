@@ -23,7 +23,6 @@ namespace QuanLyTTNN.Models
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-
             }
             public DataTable Fetch(string query)
             {

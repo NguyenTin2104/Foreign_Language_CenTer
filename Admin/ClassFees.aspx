@@ -35,7 +35,7 @@
             </div>
             <div class="row mb-3 mr-lg-5 ml-lg-5">
                 <div class="col-md-8">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered" EmtyDataText ="No record to display!" 
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" EmtyDataText ="No record to display!" 
                         AutoGenerateColumns="False" AllowPaging="true" PageSize="4" OnPageIndexChanging="GridView1_PageIndexChanging" DataKeyNames="FeesId"
                         OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" 
                         OnRowUpdating="GridView1_RowUpdating">
