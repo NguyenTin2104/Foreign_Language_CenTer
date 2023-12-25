@@ -16,7 +16,7 @@
                     <label for="ddlClass">Class</label>
                     <asp:DropDownList ID="ddlClass" runat="server" CssClass="form-control"></asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="form-control" ErrorMessage="Class is required." 
-                        ControlToValidate="ddlClass" Display="Dynamic" ForeColor="Red" InitialValue="Select Class" SetFocusOnError="True">
+                        ControlToValidate="ddlClass" Display="Dynamic" ForeColor="Red" InitialValue="Chon Lop" SetFocusOnError="True">
                     </asp:RequiredFieldValidator> 
                 </div>
                 

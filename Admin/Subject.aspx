@@ -9,7 +9,7 @@
             <div>
                 <asp:Label ID="lblMsg" runat="server"></asp:Label>
             </div>
-            <h3 class="text-center">Quan Li Mon Hoc</h3>
+            <h3 class="text-center">Quan Ly Mon Hoc</h3>
 
             <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
                 <div class="col-md-6">
@@ -34,7 +34,6 @@
                     <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" BackColor="#EF4056" Text="Them Mon Hoc" OnClick="btnAdd_Click" />
                 </div>
             </div>
-
 
             <div class="row mb-3 mr-lg-5 ml-lg-5">
                 <div class="col-md-6">

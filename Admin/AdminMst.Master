@@ -7,35 +7,35 @@
     <title>Quan Ly Trung Tam Ngoai Ngu</title>
     <meta charset="UTF-8">
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-        <link href="../Content/style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="../Content/style.css" rel="stylesheet" />
 
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
     <script src="../Scripts/umd/popper.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
 
-        <script>
-            $(document).ready(function () {
-                $(".siderbar_menu li").click(function () {
-                    $(".siderbar_menu li").removeClass("active");
-                    $(this).addClass("active");
-                });
-
-                $(".hamburger").click(function () {
-                    $(".wrapper").addClass("active");
-                });
-
-                $(".close, .bg_shadow").click(function () {
-                    $(".wrapper").removeClass("active");
-                });
+    <script>
+        $(document).ready(function () {
+            $(".siderbar_menu li").click(function () {
+                $(".siderbar_menu li").removeClass("active");
+                $(this).addClass("active");
             });
-        </script>
+
+            $(".hamburger").click(function () {
+                $(".wrapper").addClass("active");
+            });
+
+            $(".close, .bg_shadow").click(function () {
+                $(".wrapper").removeClass("active");
+            });
+        });
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-<div class="wrapper">
+        <div class="wrapper">
             <div class="sidebar">
                 <div class="bg_shadow"></div>
                 <div class="sidebar_inner">
@@ -62,6 +62,16 @@
                         </li>
                         <li>
                             <a href="#">
+                                <div class="icon"><i class="fa fa-sticky-note" aria-hidden="true"></i></div>
+                                <div class="title">Khóa Học</div>
+                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                            </a>
+                            <ul class="accordion">
+                                <li><a href="../Admin/AddClass.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Course</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
                                 <div class="icon"><i class="fas fa-hotel"></i></div>
                                 <div class="title">Lớp</div>
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
@@ -80,7 +90,7 @@
                         <li>
                             <a href="#">
                                 <div class="icon"><i class="fas fa-user-tie"></i></div>
-                                <div class="title">Giảng Viên</div>
+                                <div class="title">Giáo Viên</div>
                                 <div class="arrow"><i class="fas fa-chevron-down"></i></div>
                             </a>
                             <ul class="accordion">
