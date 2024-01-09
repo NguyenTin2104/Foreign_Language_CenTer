@@ -61,25 +61,10 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="../Admin/Class.aspx">
                                 <div class="icon"><i class="fa fa-sticky-note" aria-hidden="true"></i></div>
-                                <div class="title">Khóa Học</div>
-                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
+                                <div class="title">Lớp Học</div>
                             </a>
-                            <ul class="accordion">
-                                <li><a href="../Admin/AddClass.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Course</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="icon"><i class="fas fa-hotel"></i></div>
-                                <div class="title">Lớp</div>
-                                <div class="arrow"><i class="fas fa-chevron-down"></i></div>
-                            </a>
-                            <ul class="accordion">
-                                <li><a href="../Admin/AddClass.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Class</a></li>
-                                <li><a href="../Admin/ClassFees.aspx" class="active"><i class="fas fa-money-bill-alt pr-1"></i>Class Fees</a></li>
-                            </ul>
                         </li>
                         <li>
                             <a href="../Admin/Subject.aspx">
@@ -96,8 +81,6 @@
                             <ul class="accordion">
                                 <li><a href="../Admin/Teacher.aspx" class="active"><i class="fas fa-user-plus pr-1"></i>Add Teachers</a></li>
                                 <li><a href="../Admin/TeacherSubject.aspx" class="active"><i class="fas fa-book-reader pr-1"></i>Teachers Subject</a></li>
-                                <li><a href="../Admin/Expense.aspx" class="active"><i class="fas fa-hand-holding-usd pr-1"></i>Add Expense</a></li>
-                                <li><a href="../Admin/ExpenseDetails.aspx" class="active"><i class="fas fa-money-check-alt pr-1"></i>Expense Details</a></li>
                             </ul>
                         </li>
                         <li>
@@ -108,7 +91,6 @@
                             </a>
                             <ul class="accordion">
                                 <li><a href="../Admin/Student.aspx" class="active"><i class="fas fa-users pr-1"></i>Add Students</a></li>
-                                <li><a href="../Admin/StudAttendanceDetails.aspx" class="active"><i class="far fa-list-alt pr-1"></i>Attendance Details</a></li>
                             </ul>
 
                         </li>

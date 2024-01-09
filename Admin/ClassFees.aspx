@@ -15,11 +15,11 @@
                 <div class="col-md-6">
                     <label for="ddlClass">Class</label>
                     <asp:DropDownList ID="ddlClass" runat="server" CssClass="form-control"></asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="form-control" ErrorMessage="Class is required." 
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="form-control" ErrorMessage="Class is required."
                         ControlToValidate="ddlClass" Display="Dynamic" ForeColor="Red" InitialValue="Chon Lop" SetFocusOnError="True">
-                    </asp:RequiredFieldValidator> 
+                    </asp:RequiredFieldValidator>
                 </div>
-                
+
                 <div class="col-md-6">
                     <label for="txtFeeAmounts">Free (Annual)</label>
                     <asp:TextBox ID="txtFeeAmounts" runat="server" CssClass="form-control" placeholder="Enter Fees Amount" TextMode="Number" required>
@@ -30,21 +30,21 @@
 
             <div class="row mb-3 mr-lg-5 ml-lg-5">
                 <div class="col-md-3 col-md-offset-2 mb-3">
-                    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" BackColor="#EF4056" Text="Add Fees" OnClick="btnAdd_Click"/>
+                    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" BackColor="#EF4056" Text="Add Fees" OnClick="btnAdd_Click" />
                 </div>
             </div>
             <div class="row mb-3 mr-lg-5 ml-lg-5">
                 <div class="col-md-8">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" EmtyDataText ="No record to display!" 
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" EmtyDataText="No record to display!"
                         AutoGenerateColumns="False" AllowPaging="true" PageSize="4" OnPageIndexChanging="GridView1_PageIndexChanging" DataKeyNames="FeesId"
-                        OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" 
+                        OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing"
                         OnRowUpdating="GridView1_RowUpdating">
                         <Columns>
                             <asp:BoundField DataField="Sr.No" HeaderText="Sr.No" ReadOnly="True">
-                            <ItemStyle HorizontalAlign="Center" />
+                                <ItemStyle HorizontalAlign="Center" />
                             </asp:BoundField>
                             <asp:BoundField DataField="ClassName" HeaderText="Class" ReadOnly="True">
-                            <ItemStyle HorizontalAlign="Center" />
+                                <ItemStyle HorizontalAlign="Center" />
                             </asp:BoundField>
                             <asp:TemplateField HeaderText="Fees(Annual)">
                                 <EditItemTemplate>
@@ -56,10 +56,10 @@
                                 <ItemStyle HorizontalAlign="Center" />
                             </asp:TemplateField>
                             <asp:CommandField CausesValidation="False" HeaderText="Operation" ShowEditButton="True" ShowDeleteButton="True">
-                            <ItemStyle HorizontalAlign="Center" />
+                                <ItemStyle HorizontalAlign="Center" />
                             </asp:CommandField>
                         </Columns>
-                        <HeaderStyle BackColor="#EF4056" ForeColor="White"/>
+                        <HeaderStyle BackColor="#EF4056" ForeColor="White" />
 
                     </asp:GridView>
                 </div>

@@ -33,22 +33,13 @@ namespace QuanLyTTNN.Admin
         protected global::System.Web.UI.WebControls.TextBox txtSubjectName;
 
         /// <summary>
-        /// txtLevel control.
+        /// ddlLevel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLevel;
-
-        /// <summary>
-        /// txtNOSession control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNOSession;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLevel;
 
         /// <summary>
         /// btnAdd control.

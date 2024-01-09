@@ -5,7 +5,7 @@ using static QuanLyTTNN.Models.CommonFn;
 
 namespace QuanLyTTNN.Admin
 {
-    public partial class Teacher : System.Web.UI.Page
+    public partial class Student : System.Web.UI.Page
     {
         Commonfnx fn = new Commonfnx();
 
@@ -39,7 +39,7 @@ namespace QuanLyTTNN.Admin
 
                         string query = "INSERT INTO GiaoVien VALUES ('" + txtTeacherName.Text.Trim() + "', '" +
                             txtDoB.Text.Trim() + "', '" + ddlGender.SelectedValue + "', '" + txtMobile.Text.Trim() + "', '" +
-                            txtEmail.Text.Trim() +  "', '" + txtAddress.Text.Trim() + "' )";
+                            txtEmail.Text.Trim() + "', '" + txtAddress.Text.Trim() + "' )";
                         fn.Query(query);
                         lblMsg.Text = "Inserted Successfully";
                         lblMsg.CssClass = "alert alert-success";

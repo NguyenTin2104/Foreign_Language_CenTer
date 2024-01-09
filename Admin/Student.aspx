@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMst.Master" AutoEventWireup="true" CodeBehind="Teacher.aspx.cs" Inherits="QuanLyTTNN.Admin.Teacher" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMst.Master" AutoEventWireup="true" CodeBehind="Student.aspx.cs" Inherits="QuanLyTTNN.Admin.Student" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -9,13 +9,13 @@
             <div>
                 <asp:Label ID="lblMsg" runat="server"></asp:Label>
             </div>
-            <h3 class="text-center">Quan Ly Giao Vien</h3>
+            <h3 class="text-center">Quan Ly Hoc Vien</h3>
 
             <%--ten va ngay sinh--%>
             <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
                 <div class="col-md-6">
-                    <label for="txtTeacherName">Ten Giao Vien</label>
-                    <asp:TextBox ID="txtTeacherName" runat="server" CssClass="form-control" placeholder="Nhap Ten Giao Vien" required>
+                    <label for="txtTeacherName">Ten Hoc Vien</label>
+                    <asp:TextBox ID="txtTeacherName" runat="server" CssClass="form-control" placeholder="Nhap Ten Hoc Vien" required>
                     </asp:TextBox>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Name should be in Characters"
                         ForceColor="Red" ValidationExpression="^[A-Za-z\s]*$" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtTeacherName">
@@ -80,7 +80,7 @@
             <%--button--%>
             <div class="row mb-3 mr-lg-5 ml-lg-5 mt-md-5">
                 <div class="col-md-3 mb-3">
-                    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" BackColor="#EF4056" Text="Them Giao Vien" OnClick="btnAdd_Click" />
+                    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" BackColor="#EF4056" Text="Them Hoc Vien" OnClick="btnAdd_Click" />
                 </div>
             </div>
 
@@ -143,4 +143,5 @@
             </div>
         </div>
     </div>
+
 </asp:Content>

@@ -11,7 +11,7 @@ namespace QuanLyTTNN.Admin
 {
 
 
-    public partial class Teacher
+    public partial class Student
     {
 
         /// <summary>

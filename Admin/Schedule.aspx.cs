@@ -9,42 +9,55 @@ using static QuanLyTTNN.Models.CommonFn;
 
 namespace QuanLyTTNN.Admin
 {
-    public partial class Subject : System.Web.UI.Page
+    public partial class Schedule : System.Web.UI.Page
     {
         Commonfnx fn = new Commonfnx();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 GetSubject();
+                GetCourse();
             }
         }
-
         private void GetSubject()
         {
-                DataTable dt = fn.Fetch("SELECT Row_NUMBER() over(Order by (Select 1)) as [Sr.No], TenMonHoc, CapDo FROM MonHoc");
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+            DataTable dt = fn.Fetch("SELECT * FROM MonHoc");
+
+            // DropDownList for Subjects
+            ddlSub.DataSource = dt;
+            ddlSub.DataTextField = "TenMonHoc";
+            ddlSub.DataValueField = "TenMonHoc";
+            ddlSub.DataBind();
+            ddlSub.Items.Insert(0, "Chon Mon Hoc");
+
+            // DropDownList for Levels
+            ddlLevel.DataSource = dt;
+            ddlLevel.DataTextField = "CapDo";
+            ddlLevel.DataValueField = "CapDo";
+            ddlLevel.DataBind();
+            ddlLevel.Items.Insert(0, "Chon Cap Do");
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                DataTable dt = fn.Fetch("SELECT * FROM MonHoc WHERE TenMonHoc = '" + txtSubjectName.Text.Trim() + "' AND CapDo = '" + ddlLevel.SelectedValue + "' " );
+                string subVal = ddlSub.SelectedItem.Text;
+                string levVal = ddlLevel.SelectedItem.Text;
+                DataTable dt = fn.Fetch("SELECT * FROM KhoaHoc WHERE TenKhoaHoc = '" + ddlLevel.SelectedItem.Value + "' AND CapDo = '" + ddlLevel.SelectedItem.Text + "' ");
                 if (dt.Rows.Count == 0)
                 {
-                    string query = "INSERT INTO MonHoc (TenMonHoc, CapDo) VALUES ('" + txtSubjectName.Text.Trim() + "', '" + ddlLevel.SelectedValue + "') " ;
+                    //INSERT INTO KhoaHoc VALUES('AI/ML/DL',17,'2024-01-02', '2024-04-02', 'Tri Tue Nhan Tao', 'Co Ban')
+
+                    string query = "INSERT INTO KhoaHoc VALUES ('" + txtCourseName.Text.Trim() + "', " + txtNOSession.Text.Trim() + ", '" + txtStart.Text.Trim() + "', '" + txtEnd.Text.Trim() + "', '" + ddlSub.SelectedItem.Value + "', '" + ddlLevel.SelectedItem.Value + "' ";
                     fn.Query(query);
-                    lblMsg.Text = "Inserted Successfully";
+                    lblMsg.Text = "Insert Successfully";
                     lblMsg.CssClass = "alert alert-success";
-                    txtSubjectName.Text = string.Empty;
-                    GetSubject();
                 }
                 else
                 {
-                    lblMsg.Text = "Entered Subject already exists!";
+                    lblMsg.Text = "Entered Fees already exists for <b>'" + subVal + "'</b>!";
                     lblMsg.CssClass = "alert alert-danger";
                 }
             }
@@ -54,16 +67,11 @@ namespace QuanLyTTNN.Admin
             }
         }
 
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void GetCourse()
         {
-            // Xử lý logic khi một dòng trong GridView1 được chọn
-            // Ví dụ: Lấy giá trị của dòng được chọn
-            GridViewRow selectedRow = GridView1.SelectedRow;
-            string subjectName = selectedRow.Cells[1].Text; // Giả sử cột thứ nhất là "SubjectName"
-            string level = selectedRow.Cells[2].Text; // Giả sử cột thứ hai là "Level"
-            // Thực hiện các hành động khác cần thiết với các giá trị này
-            GetSubject();
+            DataTable dt = fn.Fetch(@"SELECT ROW_NUMBER() OVER(ORDER BY (SELECT 1)) AS [Sr.No], MaKhoaHoc, TenKhoaHoc, kh.SoBuoi, kh.TenMonHoc, kh.CapDo FROM KhoaHoc kh JOIN MonHoc mh ON kh.TenMonHoc = mh.TenMonHoc AND kh.CapDo = mh.CapDo ");
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -93,7 +101,9 @@ namespace QuanLyTTNN.Admin
 
                 // Thay thế dòng này để lấy giá trị từ DropDownList thay vì TextBox
                 string SubLevel = (row.FindControl("ddlLevelEdit") as DropDownList).SelectedValue;
-                fn.Query("UPDATE MonHoc SET TenMonHoc = '" + SubtName + "', CapDo = '" + SubLevel + "' WHERE MaMonHoc = '" + sId + "'");
+
+                string NOSession = (row.FindControl("txtNOSessionEdit") as TextBox).Text;
+                fn.Query("UPDATE MonHoc SET TenMonHoc = '" + SubtName + "', CapDo = '" + SubLevel + "', SoBuoi = '" + NOSession + "' WHERE MaMonHoc = '" + sId + "'");
                 lblMsg.Text = "Subject Updated Successfully";
                 lblMsg.CssClass = "alert alert-success";
                 GridView1.EditIndex = -1;

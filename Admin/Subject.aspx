@@ -18,13 +18,12 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="txtLevel">Cap Do</label>
-                    <asp:TextBox ID="txtLevel" runat="server" CssClass="form-control" placeholder="Nhap Cap Do" required></asp:TextBox>
-                </div>
-
-                <div class="col-md-6">
-                    <label for="txtNOSession">So Buoi</label>
-                    <asp:TextBox ID="txtNOSession" runat="server" CssClass="form-control" placeholder="Nhap So Buoi" required></asp:TextBox>
+                    <label for="ddlLevel">Cap Do</label>
+                    <asp:DropDownList ID="ddlLevel" runat="server" CssClass="form-control" placeholder="Nhap Cap Do" required>
+                        <asp:ListItem Value="0">Chon Cap Do</asp:ListItem>
+                        <asp:ListItem Text="Co Ban" Value="Co Ban" />
+                        <asp:ListItem Text="Nang Cao" Value="Nang Cao" />
+                    </asp:DropDownList>
                 </div>
 
             </div>
@@ -37,7 +36,7 @@
 
             <div class="row mb-3 mr-lg-5 ml-lg-5">
                 <div class="col-md-6">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" DataKeyNames="MaMonHoc, TenMonHoc, CapDo" AutoGenerateColumns="False"
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-bordered" DataKeyNames="TenMonHoc, CapDo" AutoGenerateColumns="False"
                         EmptyDataText="No Record to display!" AllowPaging="True" PageSize="4" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit"
                         OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <Columns>
@@ -62,17 +61,6 @@
                                 </ItemTemplate>
                                 <ItemStyle HorizontalAlign="Center" />
                             </asp:TemplateField>
-
-                            <asp:TemplateField HeaderText="NumberOfSessions">
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="txtNOSessionEdit" runat="server" Text='<%# Eval("SoBuoi") %>'></asp:TextBox>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="lblNOSession" runat="server" Text='<%# Eval("SoBuoi") %>'></asp:Label>
-                                </ItemTemplate>
-                                <ItemStyle HorizontalAlign="Center" />
-                            </asp:TemplateField>
-
                             <asp:CommandField CausesValidation="False" HeaderText="Operation" ShowEditButton="True" />
                         </Columns>
                         <HeaderStyle BackColor="#EF4056" ForeColor="White" />

@@ -41,7 +41,7 @@ namespace QuanLyTTNN.Admin
                 {
                     string query = "Insert into Fees values ('" + ddlClass.SelectedItem.Value + "', '" + txtFeeAmounts.Text.Trim() + "')";
                     fn.Query(query);
-                    lblMsg.Text = "Inserted Succesffully";
+                    lblMsg.Text = "Inserted Successfully";
                     lblMsg.CssClass = "alert alert-success";
                     ddlClass.SelectedIndex = 0;
                     txtFeeAmounts.Text = string.Empty;
